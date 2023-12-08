@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>pallindrome</h1>
+
+    <label for="text"></label>
+    <input type="text" id="text" placeholder="write here...">
+
+    <button onclick="check()">add</button><br>
+
+    <p id="output"></p>
+
+        <script>
+            function hello(value){
+                const result = value.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+
+             return result == result.split('').reverse().join('');
+
+            }
+
+            function check(){
+                const text = document.getElementById("text").value
+                const output1 = document.getElementById("output")
+
+                const output = hello(text)
+
+                if(output){
+                    output1.textContent = `${text}: is a pallindrome`
+                }
+                else{
+                    output1.textContent = `${text}: is not a palindrome`
+                }
+            }
+
+
+        </script>
+
+</body>
+</html>
